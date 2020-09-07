@@ -1,7 +1,9 @@
-console.log("Index.js file");
+import React from "react";
+import ReactDOM from "react-dom";
 
-abc = () => {
-    console.log('yayyy');
-}
+import App from "./App";
 
-abc();
+ReactDOM.render(
+    <App/>, // React Element,
+    document.getElementById('app') // where we want to render that react element to inside the DOM
+)

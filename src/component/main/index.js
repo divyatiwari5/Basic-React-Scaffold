@@ -9,11 +9,22 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        console.log('Calling Categories API..')
-        getCategory().then((resp) => {
-            console.log(resp);
+        console.log('Calling async function..')
+        this.handleGetCategory();
+    }
+
+    async handleGetCategory() {
+        let response;
+        try {
+            response = await getCategory();
+        } catch(ex) {
+            console.log('Error occured:', ex); 
+        }
+
+        response.json().then((result) => {
+            console.log('Categories:', result)
         }).catch((error) => {
-            console.log("Error: ", error);
+            console.log(error);
         })
     }
 

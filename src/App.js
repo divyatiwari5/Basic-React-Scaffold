@@ -1,5 +1,5 @@
 import React, {lazy, Suspense} from "react";
-import './app.scss';
+import "./app.scss";
 import Header from "./component/header";
 const Main = lazy(() => import ("./component/main/index"));
 
@@ -12,6 +12,7 @@ class App extends React.Component {
         return(
             <div>
                 <Header/>
+                {/* Lazy loaded Main Component */}
                 <Suspense fallback={<div className="main">Loading Main component....</div>}>
                     <Main/>
                 </Suspense>

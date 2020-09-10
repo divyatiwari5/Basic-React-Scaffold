@@ -8,11 +8,13 @@ class Main extends React.Component {
         super(props)
     }
 
+    // On mounting, an async function is called  (showcased polyfill feature)
     componentDidMount() {
         console.log('Calling async function..')
         this.handleGetCategory();
     }
 
+    // async function to call categories API
     async handleGetCategory() {
         let response;
         try {

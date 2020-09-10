@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.production.js",
     "dev": "webpack-dev-server  --open --config webpack.config.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,11 +15,17 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-cli": "^6.26.0",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2",
     "postcss": "^7.0.32",
     "postcss-loader": "^4.0.1",
+    "react-test-renderer": "^16.13.1",
+    "react-testing-library": "^8.0.1",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
@@ -39,5 +45,10 @@
   },
   "browserslist": [
     "since 2010"
-  ]
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  }
 }

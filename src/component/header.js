@@ -1,12 +1,17 @@
 import React from "react";
 
 class Header extends React.Component {
-    // Pass props to the base constructor and assign initial this.state
+    /**
+     * Pass props to the base constructor and assign initial this.state
+     *  */
     constructor(props) {
         super(props);
         this.state = {environment: '', heading: ''}
     }
-    // On Mounting component, set the state as per the environment mode
+    /**
+     * Invoked immediately after the component is mounted
+     * On Mounting component, set the state as per the environment mode
+     *  */
     componentDidMount() {
         this.setState({ environment: process.env.NODE_ENV }, () => {
             if(this.state.environment === 'development') {

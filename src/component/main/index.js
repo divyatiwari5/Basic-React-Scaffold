@@ -3,18 +3,25 @@ import "./main.scss"
 import { getCategory } from "./../../content-server/index";
 
 class Main extends React.Component {
-
+    /**
+    * Pass props to the base constructor
+    *  */
     constructor(props) {
         super(props)
     }
 
-    // On mounting, an async function is called  (showcased polyfill feature)
+    /**
+     * Invoked immediately after the component is mounted
+     * On mounting, an async function is called  ( to showcase polyfill feature)
+     *  */
     componentDidMount() {
         console.log('Calling async function..')
         this.handleGetCategory();
     }
 
-    // async function to call categories API
+    /**
+     * async function to call categories API. It will wait for the response printing the result
+     */
     async handleGetCategory() {
         let response;
         try {
